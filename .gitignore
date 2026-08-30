@@ -1,72 +1,61 @@
-# Byte-compiled / optimized / DLL files
+# ==========================================
+# Python & Bytecode
+# ==========================================
 __pycache__/
 *.py[cod]
 *$py.class
-
-# C extensions
 *.so
-
-# Distribution / packaging
 .Python
-build/
-develop-eggs/
-dist/
-downloads/
-eggs/
-.eggs/
-lib/
-lib64/
-parts/
-sdist/
-var/
-wheels/
-share/python-wheels/
-*.egg-info/
-.installed.cfg
-*.egg
-MANIFEST
 
-# PyInstaller
-*.manifest
-*.spec
-
-# Installer logs
-pip-log.txt
-pip-delete-this-directory.txt
-
-# Unit test / coverage reports
-htmlcov/
-.tox/
-.nox/
-.coverage
-.coverage.*
-.cache
-nosetests.xml
-coverage.xml
-*.cover
-*.py,cover
-.hypothesis/
-.pytest_cache/
-cover/
-
-# Environments
-.env
-.venv
-env/
+# ==========================================
+# Virtual Environments
+# ==========================================
 venv/
+.venv/
+env/
 ENV/
 env.bak/
 venv.bak/
 
-# AppImage build artifacts
+# ==========================================
+# PyInstaller & Build Artifacts
+# ==========================================
+build/
+dist/
+*.manifest
+*.spec
+*.egg-info/
+*.egg
+eggs/
+.eggs/
+
+# ==========================================
+# AppImage & Packaging Files
+# ==========================================
 AppDir/
 *.AppImage
+*.appimage
+appimagetool*
+squashfs-root/
 
-# IDE & Editor files
-.vscode/
+# ==========================================
+# IDEs, Editors & OS Metadata
+# ==========================================
 .idea/
+.vscode/
 *.swp
 *.swo
 *~
 .DS_Store
+Thumbs.db
+.directory
 
+# ==========================================
+# Logs & Testing
+# ==========================================
+*.log
+pip-log.txt
+pip-delete-this-directory.txt
+.pytest_cache/
+.coverage
+htmlcov/
