@@ -4,7 +4,8 @@ set -e
 echo "=== 1. Building Standalone Binary with PyInstaller ==="
 pip install pyinstaller
 
-pyinstaller --noconfirm --clean --windowed \
+# Build as single-file standalone binary
+pyinstaller --noconfirm --clean --onefile --windowed \
     --name hardware-monitor \
     --add-data "monitor/style.qss:monitor" \
     --hidden-import "PyQt6" \
@@ -15,13 +16,22 @@ pyinstaller --noconfirm --clean --windowed \
 echo "=== 2. Setting up AppDir ==="
 rm -rf AppDir
 mkdir -p AppDir/usr/bin
+mkdir -p AppDir/usr/share/applications
 mkdir -p AppDir/usr/share/icons/hicolor/256x256/apps
 
-cp dist/hardware-monitor AppDir/usr/bin/
+# Copy the generated executable
+if [ -f "dist/hardware-monitor" ]; then
+    cp dist/hardware-monitor AppDir/usr/bin/hardware-monitor
+    chmod +x AppDir/usr/bin/hardware-monitor
+elif [ -d "dist/hardware-monitor" ]; then
+    cp -r dist/hardware-monitor/* AppDir/usr/bin/
+    chmod +x AppDir/usr/bin/hardware-monitor
+fi
+
 cp packaging/hardware-monitor.desktop AppDir/
 cp packaging/hardware-monitor.desktop AppDir/usr/share/applications/ 2>/dev/null || true
 
-# AppRun symlink / script
+# AppRun script
 cat > AppDir/AppRun <<'APPRUN'
 #!/bin/sh
 HERE="$(dirname "$(readlink -f "${0}")")"
@@ -31,14 +41,14 @@ exec "${HERE}/usr/bin/hardware-monitor" "$@"
 APPRUN
 chmod +x AppDir/AppRun
 
-# Download standard appimagetool if not present
+# Download appimagetool if not present
 if [ ! -f "appimagetool-x86_64.AppImage" ]; then
     echo "Downloading appimagetool..."
     wget -q -c "https://github.com/AppImage/AppImageKit/releases/download/continuous/appimagetool-x86_64.AppImage"
     chmod +x appimagetool-x86_64.AppImage
 fi
 
-# Download or create placeholder icon
+# Ensure desktop file & icon in root of AppDir
 if [ ! -f "AppDir/hardware-monitor.png" ]; then
     python3 -c "
 from PIL import Image, ImageDraw
