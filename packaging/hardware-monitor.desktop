@@ -1,0 +1,10 @@
+[Desktop Entry]
+Type=Application
+Name=Hardware Monitor
+GenericName=CPU-Z Hardware & Thermal Monitor
+Comment=Lightweight, modern hardware and thermal monitor for Linux
+Exec=hardware-monitor
+Icon=hardware-monitor
+Categories=System;Monitor;HardwareSettings;
+Terminal=false
+StartupNotify=true

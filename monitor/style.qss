@@ -1,0 +1,187 @@
+/* ==========================================================================
+   Hardware Monitor - Modern Light (White) Theme
+   Inspired by CPU-Z Compact Elegance
+   Font: Segoe UI, Segoe UI Semibold, Segoe UI Bold
+   ========================================================================== */
+
+* {
+    font-family: "Segoe UI", "Inter", -apple-system, BlinkMacSystemFont, "Cantarell", "Ubuntu", sans-serif;
+    color: #1A1A1A;
+    font-size: 12px;
+}
+
+QMainWindow, QWidget#CentralWidget {
+    background-color: #F9F9FB;
+}
+
+/* Header Banner */
+#HeaderFrame {
+    background-color: #FFFFFF;
+    border-bottom: 1px solid #E5E7EB;
+    padding: 8px 12px;
+}
+
+#AppTitle {
+    font-size: 14px;
+    font-weight: 700;
+    color: #111827;
+    letter-spacing: 0.5px;
+}
+
+#AppSubtitle {
+    font-size: 11px;
+    color: #6B7280;
+    font-weight: 500;
+}
+
+#HeaderBadge {
+    background-color: #EFF6FF;
+    border: 1px solid #DBEAFE;
+    border-radius: 4px;
+    padding: 3px 8px;
+    font-size: 11px;
+    font-weight: 600;
+    color: #1D4ED8;
+}
+
+/* Tabs */
+QTabWidget::pane {
+    border: 1px solid #E5E7EB;
+    background-color: #FFFFFF;
+    border-radius: 0 0 6px 6px;
+    top: -1px;
+    margin: 0px 8px 8px 8px;
+}
+
+QTabBar::tab {
+    background-color: #F3F4F6;
+    color: #4B5563;
+    border: 1px solid #E5E7EB;
+    border-bottom: none;
+    padding: 6px 14px;
+    margin-right: 2px;
+    font-size: 11px;
+    font-weight: 600;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+}
+
+QTabBar::tab:selected {
+    background-color: #FFFFFF;
+    color: #2563EB;
+    border-color: #E5E7EB;
+    border-bottom: 1px solid #FFFFFF;
+    font-weight: 700;
+}
+
+QTabBar::tab:hover:!selected {
+    background-color: #E5E7EB;
+    color: #111827;
+}
+
+/* GroupBox & Cards */
+QGroupBox {
+    background-color: #FFFFFF;
+    border: 1px solid #E5E7EB;
+    border-radius: 6px;
+    margin-top: 10px;
+    padding: 10px 8px 8px 8px;
+    font-weight: 700;
+    font-size: 11px;
+    color: #374151;
+}
+
+QGroupBox::title {
+    subcontrol-origin: margin;
+    subcontrol-position: top left;
+    padding: 0 6px;
+    background-color: #FFFFFF;
+    color: #2563EB;
+    font-weight: 700;
+}
+
+/* Key-Value Pairs */
+QLabel.FieldLabel {
+    color: #6B7280;
+    font-weight: 600;
+    font-size: 11px;
+}
+
+QLabel.FieldValue {
+    color: #111827;
+    font-weight: 600;
+    font-size: 12px;
+}
+
+QLabel.FieldValueBold {
+    color: #111827;
+    font-weight: 700;
+    font-size: 12px;
+}
+
+/* Progress Bars */
+QProgressBar {
+    background-color: #F3F4F6;
+    border: 1px solid #E5E7EB;
+    border-radius: 3px;
+    height: 10px;
+    text-align: center;
+    font-size: 10px;
+    color: #111827;
+    font-weight: 600;
+}
+
+QProgressBar::chunk {
+    background-color: #2563EB;
+    border-radius: 2px;
+}
+
+/* Badges for Temps */
+QLabel.TempBadge {
+    background-color: #ECFDF5;
+    border: 1px solid #A7F3D0;
+    color: #047857;
+    font-weight: 700;
+    font-size: 11px;
+    border-radius: 4px;
+    padding: 2px 6px;
+}
+
+QLabel.TempBadgeWarn {
+    background-color: #FFFBEB;
+    border: 1px solid #FDE68A;
+    color: #B45309;
+    font-weight: 700;
+    font-size: 11px;
+    border-radius: 4px;
+    padding: 2px 6px;
+}
+
+QLabel.TempBadgeHot {
+    background-color: #FEF2F2;
+    border: 1px solid #FECACA;
+    color: #B91C1C;
+    font-weight: 700;
+    font-size: 11px;
+    border-radius: 4px;
+    padding: 2px 6px;
+}
+
+/* Scroll Area */
+QScrollArea {
+    border: none;
+    background-color: transparent;
+}
+
+/* Status Footer */
+#FooterFrame {
+    background-color: #F3F4F6;
+    border-top: 1px solid #E5E7EB;
+    padding: 4px 10px;
+}
+
+#FooterText {
+    font-size: 10px;
+    color: #6B7280;
+    font-weight: 500;
+}
